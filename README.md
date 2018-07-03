@@ -18,12 +18,15 @@ Blacklists grabbed from www.hetrixtools.com, you can get a more complete blackli
 
 ### Usage
 
-	# Use with domains or IP addresses
+	# Use with domains or IP addresses:
 	$ ./bl domain.tld
 	$ ./bl 8.8.8.8
     
 	# Pipe with other UNIX utils, eg. grep. Only blacklisted:
 	$ ./bl domain.tld | grep "blacklisted"
+
+	# If we have a file "list.txt" with many IP addresses to check:
+	$ for HOST in $(cat list.txt); do ./bl $HOST; done
 
 The script needs the file "blists.txt" in the current directory. You can edit the path in code file.
 
