@@ -1,5 +1,5 @@
 # blacklist-check-unix-linux-utility
-Blacklist check UNIX/Linux utility. I was just a bit tired of web interfaces.
+Blacklist check UNIX/Linux utility. Some changes made to original code, in order to met some needs.
 
 ### Introduction
 
@@ -18,22 +18,23 @@ Blacklists grabbed from www.hetrixtools.com, you can get a more complete blackli
 
 ### Usage
 
-    # Use with domains or IP addresses
-    $ bl domain.tld
-    $ bl 8.8.8.8 # IP
+	# Use with domains or IP addresses
+	$ bl domain.tld
+	$ bl 8.8.8.8
     
-    # Pipe with other UNIX utils, eg. grep. Only blacklisted:
-    $ bl domain.tld | grep "blacklisted"
+	# Pipe with other UNIX utils, eg. grep. Only blacklisted:
+	$ bl domain.tld | grep "blacklisted"
 
 ### Sample output
 
-    $ bl 8.8.8.8
-    You entered an IP: 8.8.8.8
-    8.8.8.8 name google-public-dns-a.google.com.
-    15-02-17_Feb:02:1424185674_+0000 8.8.8.8.0spam.fusionzero.com.          [not listed]
-    15-02-17_Feb:02:1424185674_+0000 8.8.8.8.0spam-killlist.fusionzero.com. [not listed]
-    15-02-17_Feb:02:1424185674_+0000 8.8.8.8.rbl.abuse.ro.                  [not listed]
-    15-02-17_Feb:02:1424185674_+0000 8.8.8.8.spam.dnsbl.anonmails.de.       [not listed]
-    15-02-17_Feb:02:1424185674_+0000 8.8.8.8.dnsbl.anticaptcha.net.         [not listed]
-    ...
-
+	~$ ./bl google.com
+	[+] Searching domain: google.com in blacklists...
+	[+] google.com not found in blacklists.
+	~$ ./bl 93.174.93.149 
+	[+] Searching IP: 93.174.93.149 in blacklists...
+	[-] 93.174.93.149 blacklisted by: all.s5h.net
+	[-] 93.174.93.149 blacklisted by: babl.rbl.webiron.net
+	[-] 93.174.93.149 blacklisted by: bl.blocklist.de
+	[!] 93.174.93.149 blacklisted by more than 3 blacklists at hetrixtools.com.
+	[*] More info at: https://hetrixtools.com/blacklist-check/93.174.93.149
+	 ...
