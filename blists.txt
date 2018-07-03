@@ -54,7 +54,6 @@ fnrbl.fast.net
 hostkarma.junkemailfilter.com
 http.dnsbl.sorbs.net
 images.rbl.msrbl.net
-invaluement
 ips.backscatterer.org
 ix.dnsbl.manitu.net
 l1.bbfh.ext.sorbs.net
