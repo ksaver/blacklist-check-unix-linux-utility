@@ -67,7 +67,7 @@ loopthroughblacklists() {
           let FOUND=$FOUND+1
           
           if [[ $FOUND -gt 2 ]]; then
-            echo "[!] $1 blacklisted by more than $FOUND blacklists at hetrixtools.com." | cecho YELLOW
+            echo "[!] $1 blacklisted more than $FOUND times at hetrixtools.com." | cecho LRED
             echo "[*] More info at: https://hetrixtools.com/blacklist-check/$1" | cecho LGREEN
             exit 0
           fi
@@ -78,7 +78,7 @@ loopthroughblacklists() {
     done
 
     if [[ $FOUND -eq 0 ]]; then
-      echo "[+] $1 not found in blacklists." | cecho LGREEN
+      echo "[+] $1 not blacklisted by lists in file $BLACKLIST." | cecho LGREEN
     fi
 }
 

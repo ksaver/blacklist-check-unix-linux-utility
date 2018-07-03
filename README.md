@@ -19,11 +19,13 @@ Blacklists grabbed from www.hetrixtools.com, you can get a more complete blackli
 ### Usage
 
 	# Use with domains or IP addresses
-	$ bl domain.tld
-	$ bl 8.8.8.8
+	$ ./bl domain.tld
+	$ ./bl 8.8.8.8
     
 	# Pipe with other UNIX utils, eg. grep. Only blacklisted:
-	$ bl domain.tld | grep "blacklisted"
+	$ ./bl domain.tld | grep "blacklisted"
+
+The script needs the file "blists.txt" in the current directory. You can edit the path in code file.
 
 ### Sample output
 
