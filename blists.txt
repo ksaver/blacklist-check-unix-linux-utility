@@ -41,7 +41,6 @@ dnsbl.net.ua
 dnsbl.rv-soft.info
 dnsbl.rymsho.ru
 dnsbl.sorbs.net
-dnsbl.spfbl.net
 dnsbl.tornevall.org
 dnsbl.zapbl.net
 dnsrbl.org
