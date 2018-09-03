@@ -10,7 +10,7 @@
 
 # Adapted to use hetrixtools.com blacklists.
 
-BLACKLIST="blists.txt"
+BLACKLIST="$HOME/.blists.txt"
 FOUND=0
 
 
@@ -30,7 +30,7 @@ main() {
     reverseit $domain "[-] IP not valid or domain could not be resolved."
   else
 
-    echo "[MSG] Searching IP: $1 in blacklists..." | cecho YELLOW
+    echo "[MSG] Searching IP: $1 ($(geolocate $1)) in blacklists..." | cecho YELLOW
     reverseit $1 "IP not valid."
   fi
 
@@ -105,6 +105,16 @@ cecho(){
  
   echo -ne "${NORMAL}"
 }
+
+geolocate() {
+
+    IP="$1"
+    COUNTRY=$(curl -s http://api.db-ip.com/v2/free/$IP/countryName)
+    echo "$COUNTRY"
+
+}
+
+
 
 ### initiate script ###
 main $1
